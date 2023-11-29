@@ -9,7 +9,11 @@ const { LocalAuth, Client } = pkg;
 const SESSION_FILE_PATH = "./session.json";
 
 let sessionData;
-let closefriends = ["919090696901@c.us", "918591075356@c.us"];
+let closefriends = [
+  "919090696901@c.us",
+  "918591075356@c.us",
+  "9170216814@c.us",
+];
 let ack = ["ya", "ok", "acha", "aha", "hmm", "thik hey", "k", "busy wait ttyl"];
 
 const client = new Client({
