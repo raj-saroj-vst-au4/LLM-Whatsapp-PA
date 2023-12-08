@@ -1,10 +1,13 @@
 import fs from "fs";
 import { config } from "dotenv";
 import pkg from "whatsapp-web.js";
+import { NlpManager } from "node-nlp";
+import qrcode from "qrcode-terminal";
 
 config();
 
 const { LocalAuth, Client } = pkg;
+const nlpman = new NlpManager({ languages: ["en"] });
 
 const SESSION_FILE_PATH = "./session.json";
 
@@ -12,9 +15,62 @@ let sessionData;
 let closefriends = [
   "919090696901@c.us",
   "918591075356@c.us",
-  "9170216814@c.us",
+  "917021586822@c.us",
 ];
-let ack = ["ya", "ok", "acha", "aha", "hmm", "thik hey", "k", "busy wait ttyl"];
+
+// greeting
+nlpman.addDocument("en", "hi", "greeting");
+nlpman.addDocument("en", "hello", "greeting");
+nlpman.addDocument("en", "hey", "greeting");
+nlpman.addDocument("en", "yo", "greeting");
+nlpman.addDocument("en", "good morning", "greeting");
+nlpman.addAnswer("en", "greeting", "Ha say na");
+nlpman.addAnswer("en", "greeting", "ya ?");
+nlpman.addAnswer("en", "greeting", "aha ?");
+nlpman.addAnswer("en", "greeting", "hmm ?");
+
+//basicq&a - location requests
+nlpman.addDocument("en", "kahan hey ?", "locreq");
+nlpman.addDocument("en", "kidr pe hey", "locreq");
+nlpman.addDocument("en", "where are u", "locreq");
+nlpman.addDocument("en", "kaha ho", "locreq");
+nlpman.addAnswer("en", "locreq", "ya ?");
+nlpman.addAnswer("en", "locreq", "ghr");
+nlpman.addAnswer("en", "locreq", "home");
+nlpman.addAnswer("en", "locreq", "kaam kr rha hu sayna ?");
+nlpman.addAnswer("en", "locreq", "gharpe");
+nlpman.addAnswer("en", "locreq", "busy ttyl");
+
+//basicq&a - food requests
+nlpman.addDocument("en", "khana khaya ?", "foodreq");
+nlpman.addDocument("en", "done with dinner", "foodreq");
+nlpman.addDocument("en", "lunch done ?", "foodreq");
+nlpman.addDocument("en", "kuch khaya", "foodreq");
+nlpman.addDocument("en", "dinner hua ?", "foodreq");
+nlpman.addAnswer("en", "foodreq", "not yet baba ttyl");
+nlpman.addAnswer("en", "foodreq", "na");
+nlpman.addAnswer("en", "foodreq", "kaam hey baadme dekhta hu");
+nlpman.addAnswer("en", "foodreq", "thode der baad");
+
+//basicq&a - lame requests
+nlpman.addDocument("en", "bahar aarha hey ?", "lamereq");
+nlpman.addDocument("en", "niche kab ayega", "lamereq");
+nlpman.addDocument("en", "aarhey ho ?", "lamereq");
+nlpman.addDocument("en", "lene aoge ?", "lamereq");
+nlpman.addDocument("en", "coming ?", "lamereq");
+nlpman.addAnswer("en", "lamreq", "kya hua ?");
+nlpman.addAnswer("en", "lamreq", "dekhta hu");
+nlpman.addAnswer("en", "lamreq", "nhi yaar kaam hey");
+nlpman.addAnswer("en", "lamreq", "thode der baad ?");
+
+//basicq&a - boring ones
+nlpman.addDocument("en", "kya karing ?", "boringreq");
+nlpman.addDocument("en", "gussa ho", "boringreq");
+nlpman.addDocument("en", "what are you doing ?", "boringreq");
+nlpman.addDocument("en", "call karu ?", "boringreq");
+nlpman.addAnswer("en", "boringreq", "busy ttyl");
+nlpman.addAnswer("en", "boringreq", "kaam kar rha hu baadme call krta hu");
+nlpman.addAnswer("en", "boringreq", "baadme baat krta hu");
 
 const client = new Client({
   authStrategy: new LocalAuth(),
@@ -27,40 +83,10 @@ if (fs.existsSync(SESSION_FILE_PATH)) {
   sessionData = require(SESSION_FILE_PATH);
 }
 
-const reqnres = async (req) => {
-  if (
-    req == "hi" ||
-    "hii" ||
-    "Hi" ||
-    "Hii" ||
-    "Hey" ||
-    "hey" ||
-    "yo" ||
-    "yoo"
-  ) {
-    return ack[Math.floor(Math.random() * ack.length)];
-  }
-};
-
-console.log(reqnres("hii who are you ?"));
-
-client.on("qr", (qr) => {
+client.on("qr", async (qr) => {
   console.log("QR RECEIVED", qr);
   qrcode.generate(qr, { small: true });
 });
-
-// client.on("authenticated", (session) => {
-//   console.log("Authenticated session", session);
-//   if (session) {
-//     console.log(session);
-//     sessionData = session;
-//     fs.writeFile(SESSION_FILE_PATH, JSON.stringify(session), (err) => {
-//       if (err) {
-//         console.error(err);
-//       }
-//     });
-//   }
-// });
 
 client.on("ready", () => {
   console.log("Client is ready!");
@@ -79,8 +105,13 @@ client.on("message", async (message) => {
     }
     if (typeof message.body === "string") {
       try {
-        const response = await reqnres(message.body);
-        await client.sendMessage(message.from, response);
+        console.log("recieved whatsapp msg", message.body);
+        const response = await nlpman.process(message.body);
+        console.log("Ai response ", response.answer);
+        if (response.answer) {
+          return await client.sendMessage(message.from, response.answer);
+        }
+        return;
       } catch (e) {
         console.log(e);
       }
@@ -88,4 +119,11 @@ client.on("message", async (message) => {
   }
 });
 
-client.initialize();
+nlpman
+  .train()
+  .then(() => {
+    nlpman.save();
+  })
+  .then(() => {
+    client.initialize();
+  });

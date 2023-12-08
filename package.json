@@ -13,6 +13,7 @@
     "@botpress/sdk": "^0.5.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "node-nlp": "^4.27.0",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.23.0"
   }

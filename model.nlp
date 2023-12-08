@@ -1,0 +1,1329 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "yo": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morn": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey,kahan": {
+            "intent": "locreq",
+            "domain": "default"
+          },
+          "hey,kidr,pe": {
+            "intent": "locreq",
+            "domain": "default"
+          },
+          "are,u,where": {
+            "intent": "locreq",
+            "domain": "default"
+          },
+          "ho,kaha": {
+            "intent": "locreq",
+            "domain": "default"
+          },
+          "khana,khaya": {
+            "intent": "foodreq",
+            "domain": "default"
+          },
+          "dinner,done,with": {
+            "intent": "foodreq",
+            "domain": "default"
+          },
+          "done,lunch": {
+            "intent": "foodreq",
+            "domain": "default"
+          },
+          "khaya,kuch": {
+            "intent": "foodreq",
+            "domain": "default"
+          },
+          "dinner,hua": {
+            "intent": "foodreq",
+            "domain": "default"
+          },
+          "aarha,bahar,hey": {
+            "intent": "lamereq",
+            "domain": "default"
+          },
+          "ayega,kab,nich": {
+            "intent": "lamereq",
+            "domain": "default"
+          },
+          "aarhey,ho": {
+            "intent": "lamereq",
+            "domain": "default"
+          },
+          "aog,lene": {
+            "intent": "lamereq",
+            "domain": "default"
+          },
+          "come": {
+            "intent": "lamereq",
+            "domain": "default"
+          },
+          "kare,kya": {
+            "intent": "boringreq",
+            "domain": "default"
+          },
+          "gussa,ho": {
+            "intent": "boringreq",
+            "domain": "default"
+          },
+          "are,do,what,you": {
+            "intent": "boringreq",
+            "domain": "default"
+          },
+          "call,karu": {
+            "intent": "boringreq",
+            "domain": "default"
+          },
+          "i,listen,love,toh,you": {
+            "intent": "luvshit",
+            "domain": "default"
+          },
+          "do,love,me,you": {
+            "intent": "luvshit",
+            "domain": "default"
+          },
+          "love,me,na,raj,u": {
+            "intent": "luvshit",
+            "domain": "default"
+          },
+          "fuck,u": {
+            "intent": "garbage",
+            "domain": "default"
+          },
+          "fuck,off": {
+            "intent": "garbage",
+            "domain": "default"
+          },
+          "hmm": {
+            "intent": "garbage",
+            "domain": "default"
+          },
+          "wow": {
+            "intent": "garbage",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting": "default",
+          "locreq": "default",
+          "foodreq": "default",
+          "lamereq": "default",
+          "boringreq": "default",
+          "luvshit": "default",
+          "garbage": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "kahan hey ?",
+            "intent": "locreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "kidr pe hey",
+            "intent": "locreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "where are u",
+            "intent": "locreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "kaha ho",
+            "intent": "locreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "khana khaya ?",
+            "intent": "foodreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "done with dinner",
+            "intent": "foodreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "lunch done ?",
+            "intent": "foodreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "kuch khaya",
+            "intent": "foodreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "dinner hua ?",
+            "intent": "foodreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "bahar aarha hey ?",
+            "intent": "lamereq"
+          },
+          {
+            "domain": "default",
+            "utterance": "niche kab ayega",
+            "intent": "lamereq"
+          },
+          {
+            "domain": "default",
+            "utterance": "aarhey ho ?",
+            "intent": "lamereq"
+          },
+          {
+            "domain": "default",
+            "utterance": "lene aoge ?",
+            "intent": "lamereq"
+          },
+          {
+            "domain": "default",
+            "utterance": "coming ?",
+            "intent": "lamereq"
+          },
+          {
+            "domain": "default",
+            "utterance": "kya karing ?",
+            "intent": "boringreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "gussa ho",
+            "intent": "boringreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are you doing ?",
+            "intent": "boringreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "call karu ?",
+            "intent": "boringreq"
+          },
+          {
+            "domain": "default",
+            "utterance": "listen toh, i love you",
+            "intent": "luvshit"
+          },
+          {
+            "domain": "default",
+            "utterance": "do you love me ?",
+            "intent": "luvshit"
+          },
+          {
+            "domain": "default",
+            "utterance": "Raj u love me na ?",
+            "intent": "luvshit"
+          },
+          {
+            "domain": "default",
+            "utterance": "fuck u",
+            "intent": "garbage"
+          },
+          {
+            "domain": "default",
+            "utterance": "fuck off",
+            "intent": "garbage"
+          },
+          {
+            "domain": "default",
+            "utterance": "hmm",
+            "intent": "garbage"
+          },
+          {
+            "domain": "default",
+            "utterance": "wow",
+            "intent": "garbage"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hi": 1,
+              "hello": 1,
+              "hey": 1,
+              "yo": 1,
+              "good": 1,
+              "morn": 1,
+              "kahan": 1,
+              "kidr": 1,
+              "pe": 1,
+              "where": 1,
+              "are": 1,
+              "u": 1,
+              "kaha": 1,
+              "ho": 1,
+              "khana": 1,
+              "khaya": 1,
+              "done": 1,
+              "with": 1,
+              "dinner": 1,
+              "lunch": 1,
+              "kuch": 1,
+              "hua": 1,
+              "bahar": 1,
+              "aarha": 1,
+              "nich": 1,
+              "kab": 1,
+              "ayega": 1,
+              "aarhey": 1,
+              "lene": 1,
+              "aog": 1,
+              "come": 1,
+              "kya": 1,
+              "kare": 1,
+              "gussa": 1,
+              "what": 1,
+              "you": 1,
+              "do": 1,
+              "call": 1,
+              "karu": 1,
+              "listen": 1,
+              "toh": 1,
+              "i": 1,
+              "love": 1,
+              "me": 1,
+              "raj": 1,
+              "na": 1,
+              "fuck": 1,
+              "off": 1,
+              "hmm": 1,
+              "wow": 1
+            },
+            "intents": {
+              "greeting": 1,
+              "locreq": 1,
+              "foodreq": 1,
+              "lamereq": 1,
+              "boringreq": 1,
+              "luvshit": 1,
+              "garbage": 1
+            },
+            "intentFeatures": {
+              "greeting": {
+                "hi": 1,
+                "hello": 1,
+                "hey": 1,
+                "yo": 1,
+                "good": 1,
+                "morn": 1
+              },
+              "locreq": {
+                "kahan": 1,
+                "hey": 1,
+                "kidr": 1,
+                "pe": 1,
+                "where": 1,
+                "are": 1,
+                "u": 1,
+                "kaha": 1,
+                "ho": 1
+              },
+              "foodreq": {
+                "khana": 1,
+                "khaya": 1,
+                "done": 1,
+                "with": 1,
+                "dinner": 1,
+                "lunch": 1,
+                "kuch": 1,
+                "hua": 1
+              },
+              "lamereq": {
+                "bahar": 1,
+                "aarha": 1,
+                "hey": 1,
+                "nich": 1,
+                "kab": 1,
+                "ayega": 1,
+                "aarhey": 1,
+                "ho": 1,
+                "lene": 1,
+                "aog": 1,
+                "come": 1
+              },
+              "boringreq": {
+                "kya": 1,
+                "kare": 1,
+                "gussa": 1,
+                "ho": 1,
+                "what": 1,
+                "are": 1,
+                "you": 1,
+                "do": 1,
+                "call": 1,
+                "karu": 1
+              },
+              "luvshit": {
+                "listen": 1,
+                "toh": 1,
+                "i": 1,
+                "love": 1,
+                "you": 1,
+                "do": 1,
+                "me": 1,
+                "raj": 1,
+                "u": 1,
+                "na": 1
+              },
+              "garbage": {
+                "fuck": 1,
+                "u": 1,
+                "off": 1,
+                "hmm": 1,
+                "wow": 1
+              }
+            },
+            "featuresToIntent": {
+              "hi": [
+                "greeting"
+              ],
+              "hello": [
+                "greeting"
+              ],
+              "hey": [
+                "greeting",
+                "locreq",
+                "lamereq"
+              ],
+              "yo": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morn": [
+                "greeting"
+              ],
+              "kahan": [
+                "locreq"
+              ],
+              "kidr": [
+                "locreq"
+              ],
+              "pe": [
+                "locreq"
+              ],
+              "where": [
+                "locreq"
+              ],
+              "are": [
+                "locreq",
+                "boringreq"
+              ],
+              "u": [
+                "locreq",
+                "luvshit",
+                "garbage"
+              ],
+              "kaha": [
+                "locreq"
+              ],
+              "ho": [
+                "locreq",
+                "lamereq",
+                "boringreq"
+              ],
+              "khana": [
+                "foodreq"
+              ],
+              "khaya": [
+                "foodreq"
+              ],
+              "done": [
+                "foodreq"
+              ],
+              "with": [
+                "foodreq"
+              ],
+              "dinner": [
+                "foodreq"
+              ],
+              "lunch": [
+                "foodreq"
+              ],
+              "kuch": [
+                "foodreq"
+              ],
+              "hua": [
+                "foodreq"
+              ],
+              "bahar": [
+                "lamereq"
+              ],
+              "aarha": [
+                "lamereq"
+              ],
+              "nich": [
+                "lamereq"
+              ],
+              "kab": [
+                "lamereq"
+              ],
+              "ayega": [
+                "lamereq"
+              ],
+              "aarhey": [
+                "lamereq"
+              ],
+              "lene": [
+                "lamereq"
+              ],
+              "aog": [
+                "lamereq"
+              ],
+              "come": [
+                "lamereq"
+              ],
+              "kya": [
+                "boringreq"
+              ],
+              "kare": [
+                "boringreq"
+              ],
+              "gussa": [
+                "boringreq"
+              ],
+              "what": [
+                "boringreq"
+              ],
+              "you": [
+                "boringreq",
+                "luvshit"
+              ],
+              "do": [
+                "boringreq",
+                "luvshit"
+              ],
+              "call": [
+                "boringreq"
+              ],
+              "karu": [
+                "boringreq"
+              ],
+              "listen": [
+                "luvshit"
+              ],
+              "toh": [
+                "luvshit"
+              ],
+              "i": [
+                "luvshit"
+              ],
+              "love": [
+                "luvshit"
+              ],
+              "me": [
+                "luvshit"
+              ],
+              "raj": [
+                "luvshit"
+              ],
+              "na": [
+                "luvshit"
+              ],
+              "fuck": [
+                "garbage"
+              ],
+              "off": [
+                "garbage"
+              ],
+              "hmm": [
+                "garbage"
+              ],
+              "wow": [
+                "garbage"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hi",
+                "hello",
+                "hey",
+                "yo",
+                "good",
+                "morn",
+                "kahan",
+                "kidr",
+                "pe",
+                "where",
+                "are",
+                "u",
+                "kaha",
+                "ho",
+                "khana",
+                "khaya",
+                "done",
+                "with",
+                "dinner",
+                "lunch",
+                "kuch",
+                "hua",
+                "bahar",
+                "aarha",
+                "nich",
+                "kab",
+                "ayega",
+                "aarhey",
+                "lene",
+                "aog",
+                "come",
+                "kya",
+                "kare",
+                "gussa",
+                "what",
+                "you",
+                "do",
+                "call",
+                "karu",
+                "listen",
+                "toh",
+                "i",
+                "love",
+                "me",
+                "raj",
+                "na",
+                "fuck",
+                "off",
+                "hmm",
+                "wow"
+              ],
+              "intents": [
+                "greeting",
+                "locreq",
+                "foodreq",
+                "lamereq",
+                "boringreq",
+                "luvshit",
+                "garbage"
+              ],
+              "perceptrons": [
+                [
+                  10.094573974609375,
+                  10.096016883850098,
+                  8.878833770751953,
+                  10.031542778015137,
+                  5.012993812561035,
+                  5.012993812561035,
+                  -12.7243013381958,
+                  -6.4879560470581055,
+                  -6.4879560470581055,
+                  -0.9697669744491577,
+                  -1.4330323934555054,
+                  -1.8328825235366821,
+                  -1.1596604585647583,
+                  -3.2027924060821533,
+                  -1.4115790128707886,
+                  -2.821990489959717,
+                  -2.4510016441345215,
+                  -0.6418998837471008,
+                  -2.4506192207336426,
+                  -1.7784065008163452,
+                  -1.4098871946334839,
+                  -1.778024435043335,
+                  -6.479074001312256,
+                  -6.479074001312256,
+                  -1.4078717231750488,
+                  -1.4078717231750488,
+                  -1.4078717231750488,
+                  -1.021127700805664,
+                  -2.10933780670166,
+                  -2.10933780670166,
+                  -4.200372695922852,
+                  -2.108384609222412,
+                  -2.108384609222412,
+                  -1.0165338516235352,
+                  -0.46294519305229187,
+                  -1.4283366203308105,
+                  -0.9002276062965393,
+                  -2.1078412532806396,
+                  -2.1078412532806396,
+                  -0.5278883576393127,
+                  -0.5278883576393127,
+                  -0.5278883576393127,
+                  -1.2124565839767456,
+                  -0.6843489408493042,
+                  -0.2471386045217514,
+                  -0.2471386045217514,
+                  -2.415252923965454,
+                  -1.7995775938034058,
+                  -4.1950836181640625,
+                  -4.192897319793701,
+                  4.222475989818307
+                ],
+                [
+                  -0.44979923963546753,
+                  -0.44050049781799316,
+                  1.017966866493225,
+                  -0.28520724177360535,
+                  -0.18495403230190277,
+                  -0.18495403230190277,
+                  13.59045124053955,
+                  6.864069938659668,
+                  6.864069938659668,
+                  6.657163143157959,
+                  5.084360599517822,
+                  3.0695853233337402,
+                  10.88950252532959,
+                  3.911048650741577,
+                  -0.4824886620044708,
+                  -0.9814728498458862,
+                  -0.8761613965034485,
+                  -0.34383687376976013,
+                  -0.8505622148513794,
+                  -0.467359721660614,
+                  -0.43049344420433044,
+                  -0.4423694610595703,
+                  -2.5113065242767334,
+                  -2.5113065242767334,
+                  -0.4213061034679413,
+                  -0.4213061034679413,
+                  -0.4213061034679413,
+                  -3.4908339977264404,
+                  -0.4654339551925659,
+                  -0.4654339551925659,
+                  -0.6687072515487671,
+                  -0.45448026061058044,
+                  -0.45448026061058044,
+                  -3.4865150451660156,
+                  -1.5719720125198364,
+                  -1.7576830387115479,
+                  -1.639014720916748,
+                  -0.37160903215408325,
+                  -0.37160903215408325,
+                  -0.07646635919809341,
+                  -0.07646635919809341,
+                  -0.07646635919809341,
+                  -0.9783368110656738,
+                  -0.8596605062484741,
+                  -0.7925671935081482,
+                  -0.7925671935081482,
+                  -2.903737783432007,
+                  -0.10312146693468094,
+                  -0.4664524793624878,
+                  -0.4594254195690155,
+                  -0.5363458227273253
+                ],
+                [
+                  -1.4801321029663086,
+                  -1.4800500869750977,
+                  -1.4913767576217651,
+                  -1.4799437522888184,
+                  -0.745490550994873,
+                  -0.745490550994873,
+                  -0.2190753072500229,
+                  -0.1479504108428955,
+                  -0.1479504108428955,
+                  -0.17573103308677673,
+                  -0.5467981696128845,
+                  -0.8975135087966919,
+                  -0.19210514426231384,
+                  -1.422426700592041,
+                  4.268484115600586,
+                  8.536994934082031,
+                  6.402772426605225,
+                  0.000750036328099668,
+                  6.402740955352783,
+                  6.402045249938965,
+                  4.268509387969971,
+                  6.402016639709473,
+                  -0.5500780940055847,
+                  -0.5500780940055847,
+                  -0.7039937376976013,
+                  -0.7039937376976013,
+                  -0.7039937376976013,
+                  -0.635219156742096,
+                  -0.9074702858924866,
+                  -0.9074702858924866,
+                  -1.4827842712402344,
+                  -0.8766197562217712,
+                  -0.8766197562217712,
+                  -0.5169488787651062,
+                  -0.3164070248603821,
+                  -0.8166130185127258,
+                  -0.5165883898735046,
+                  -0.8489128947257996,
+                  -0.8489128947257996,
+                  -0.2480272352695465,
+                  -0.2480272352695465,
+                  -0.2480272352695465,
+                  -0.6896718740463257,
+                  -0.39574795961380005,
+                  -0.21031062304973602,
+                  -0.21031062304973602,
+                  -1.1042314767837524,
+                  -0.6259849071502686,
+                  -1.4802554845809937,
+                  -1.4802061319351196,
+                  1.4802566472398044
+                ],
+                [
+                  -1.9403729438781738,
+                  -1.9361233711242676,
+                  -1.8701083660125732,
+                  -1.9118809700012207,
+                  -0.9619327783584595,
+                  -0.9619327783584595,
+                  -1.7465420961380005,
+                  -1.0852367877960205,
+                  -1.0852367877960205,
+                  -0.1718478947877884,
+                  -0.6493600010871887,
+                  -1.1052347421646118,
+                  -4.042935371398926,
+                  2.1441056728363037,
+                  -0.6427472233772278,
+                  -1.2797200679779053,
+                  -1.1253138780593872,
+                  -0.30803874135017395,
+                  -1.1251943111419678,
+                  -0.7914420366287231,
+                  -0.6369385123252869,
+                  -0.7913225889205933,
+                  7.122269153594971,
+                  7.122269153594971,
+                  4.128256797790527,
+                  4.128256797790527,
+                  4.128256797790527,
+                  10.239070892333984,
+                  6.191956520080566,
+                  6.191956520080566,
+                  12.377992630004883,
+                  -1.1772913932800293,
+                  -1.1772913932800293,
+                  -4.051990985870361,
+                  -0.40585431456565857,
+                  -1.0477763414382935,
+                  -0.6623358726501465,
+                  -1.1100869178771973,
+                  -1.1100869178771973,
+                  -0.31720542907714844,
+                  -0.31720542907714844,
+                  -0.31720542907714844,
+                  -0.8850690722465515,
+                  -0.5079917311668396,
+                  -0.2704648971557617,
+                  -0.2704648971557617,
+                  -1.4301717281341553,
+                  -0.804404616355896,
+                  -1.951266884803772,
+                  -1.9453589916229248,
+                  1.9007156307474704
+                ],
+                [
+                  -1.2176011800765991,
+                  -1.2080434560775757,
+                  -1.3139967918395996,
+                  -1.1973415613174438,
+                  -0.6821916103363037,
+                  -0.6821916103363037,
+                  -0.3182916045188904,
+                  -0.22000610828399658,
+                  -0.22000610828399658,
+                  -1.927551507949829,
+                  3.235243082046509,
+                  -2.4932029247283936,
+                  -3.863654375076294,
+                  2.693254232406616,
+                  -0.43919238448143005,
+                  -0.8423131108283997,
+                  -0.7482007741928101,
+                  -0.24963054060935974,
+                  -0.7442681789398193,
+                  -0.4812764525413513,
+                  -0.3974055051803589,
+                  -0.4773526191711426,
+                  -0.08926878869533539,
+                  -0.08926878869533539,
+                  -0.41632935404777527,
+                  -0.41632935404777527,
+                  -0.41632935404777527,
+                  -3.8632638454437256,
+                  -0.5874118804931641,
+                  -0.5874118804931641,
+                  -1.1706483364105225,
+                  6.557422161102295,
+                  6.557422161102295,
+                  10.420215606689453,
+                  5.163176536560059,
+                  2.0086545944213867,
+                  2.7076988220214844,
+                  6.557363986968994,
+                  6.557363986968994,
+                  -0.629854142665863,
+                  -0.629854142665863,
+                  -0.629854142665863,
+                  -3.296311616897583,
+                  -2.597266912460327,
+                  -0.09512777626514435,
+                  -0.09512777626514435,
+                  -1.0211784839630127,
+                  -0.594043493270874,
+                  -1.2416749000549316,
+                  -1.2290551662445068,
+                  1.1709302403194457
+                ],
+                [
+                  -0.22091476619243622,
+                  -0.21284984052181244,
+                  -0.44129905104637146,
+                  -0.1993837207555771,
+                  -0.1602185219526291,
+                  -0.1602185219526291,
+                  -0.10008557140827179,
+                  -0.08414158225059509,
+                  -0.08414158225059509,
+                  -0.3115757703781128,
+                  -2.0818419456481934,
+                  0.611456573009491,
+                  -0.10230505466461182,
+                  -0.27692729234695435,
+                  -0.12011309713125229,
+                  -0.2441158890724182,
+                  -0.22223421931266785,
+                  -0.0887565016746521,
+                  -0.2148255705833435,
+                  -0.10601933300495148,
+                  -0.09973272681236267,
+                  -0.09901615232229233,
+                  -0.034739673137664795,
+                  -0.034739673137664795,
+                  -0.1042235940694809,
+                  -0.1042235940694809,
+                  -0.1042235940694809,
+                  -0.06933676451444626,
+                  -0.11724742501974106,
+                  -0.11724742501974106,
+                  -0.12726697325706482,
+                  -0.10931644588708878,
+                  -0.10931644588708878,
+                  -0.051126666367053986,
+                  -1.7140642404556274,
+                  2.8136768341064453,
+                  1.0228813886642456,
+                  -0.06405353546142578,
+                  -0.06405353546142578,
+                  1.7907966375350952,
+                  1.7907966375350952,
+                  1.7907966375350952,
+                  6.140296936035156,
+                  4.349498271942139,
+                  1.612555980682373,
+                  1.612555980682373,
+                  -0.800190806388855,
+                  -0.14014171063899994,
+                  -0.2180340588092804,
+                  -0.229487344622612,
+                  -0.04064684625019363
+                ],
+                [
+                  -2.4380712509155273,
+                  -2.437915802001953,
+                  -2.4380109310150146,
+                  -2.437617540359497,
+                  -1.2191754579544067,
+                  -1.2191754579544067,
+                  -0.46381092071533203,
+                  -0.30640706419944763,
+                  -0.30640706419944763,
+                  -2.4968230724334717,
+                  -2.6533493995666504,
+                  2.7149038314819336,
+                  -0.6805815100669861,
+                  -1.8604650497436523,
+                  -0.8157845735549927,
+                  -1.6269152164459229,
+                  -1.427297830581665,
+                  -0.3859015703201294,
+                  -1.4272964000701904,
+                  -1.0106184482574463,
+                  -0.8109995722770691,
+                  -1.0106171369552612,
+                  -0.1726643443107605,
+                  -0.1726643443107605,
+                  -0.8126400113105774,
+                  -0.8126400113105774,
+                  -0.8126400113105774,
+                  -0.5984578132629395,
+                  -1.218955636024475,
+                  -1.218955636024475,
+                  -2.4367125034332275,
+                  -1.218908429145813,
+                  -1.218908429145813,
+                  -0.5773465633392334,
+                  -0.13503828644752502,
+                  -0.4521288573741913,
+                  -0.2478308081626892,
+                  -1.2189030647277832,
+                  -1.2189030647277832,
+                  -0.18603456020355225,
+                  -0.18603456020355225,
+                  -0.18603456020355225,
+                  -1.4854047298431396,
+                  -1.2940248250961304,
+                  -1.1861382722854614,
+                  -1.1861382722854614,
+                  9.125486373901367,
+                  2.727382183074951,
+                  11.846333503723145,
+                  11.845538139343262,
+                  2.438054557655802
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "kahan hey ?"
+      ],
+      [
+        "en",
+        "kidr pe hey"
+      ],
+      [
+        "en",
+        "where are u"
+      ],
+      [
+        "en",
+        "kaha ho"
+      ],
+      [
+        "en",
+        "khana khaya ?"
+      ],
+      [
+        "en",
+        "done with dinner"
+      ],
+      [
+        "en",
+        "lunch done ?"
+      ],
+      [
+        "en",
+        "kuch khaya"
+      ],
+      [
+        "en",
+        "dinner hua ?"
+      ],
+      [
+        "en",
+        "bahar aarha hey ?"
+      ],
+      [
+        "en",
+        "niche kab ayega"
+      ],
+      [
+        "en",
+        "aarhey ho ?"
+      ],
+      [
+        "en",
+        "lene aoge ?"
+      ],
+      [
+        "en",
+        "coming ?"
+      ],
+      [
+        "en",
+        "kya karing ?"
+      ],
+      [
+        "en",
+        "gussa ho"
+      ],
+      [
+        "en",
+        "what are you doing ?"
+      ],
+      [
+        "en",
+        "call karu ?"
+      ],
+      [
+        "en",
+        "listen toh, i love you"
+      ],
+      [
+        "en",
+        "do you love me ?"
+      ],
+      [
+        "en",
+        "Raj u love me na ?"
+      ],
+      [
+        "en",
+        "fuck u"
+      ],
+      [
+        "en",
+        "fuck off"
+      ],
+      [
+        "en",
+        "hmm"
+      ],
+      [
+        "en",
+        "wow"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greeting": [
+          {
+            "answer": "Ha say na"
+          },
+          {
+            "answer": "ya ?"
+          },
+          {
+            "answer": "aha ?"
+          },
+          {
+            "answer": "hmm ?"
+          }
+        ],
+        "locreq": [
+          {
+            "answer": "ya ?"
+          },
+          {
+            "answer": "ghr"
+          },
+          {
+            "answer": "home"
+          },
+          {
+            "answer": "kaam kr rha hu sayna ?"
+          },
+          {
+            "answer": "gharpe"
+          },
+          {
+            "answer": "busy ttyl"
+          }
+        ],
+        "foodreq": [
+          {
+            "answer": "not yet baba ttyl"
+          },
+          {
+            "answer": "na"
+          },
+          {
+            "answer": "kaam hey baadme dekhta hu"
+          },
+          {
+            "answer": "thode der baad"
+          }
+        ],
+        "lamreq": [
+          {
+            "answer": "kya hua ?"
+          },
+          {
+            "answer": "dekhta hu"
+          },
+          {
+            "answer": "nhi yaar kaam hey"
+          },
+          {
+            "answer": "thode der baad ?"
+          }
+        ],
+        "boringreq": [
+          {
+            "answer": "busy ttyl"
+          },
+          {
+            "answer": "kaam kar rha hu baadme call krta hu"
+          },
+          {
+            "answer": "baadme baat krta hu"
+          }
+        ],
+        "luvshit": [
+          {
+            "answer": "aah girlsss"
+          },
+          {
+            "answer": "ye kab hua ?"
+          },
+          {
+            "answer": "but we just met on tinder"
+          },
+          {
+            "answer": "kal hi toh mile aur aaj..."
+          },
+          {
+            "answer": "shutup any update on threesome ?"
+          }
+        ],
+        "garbage": [
+          {
+            "answer": "k"
+          },
+          {
+            "answer": "bye"
+          },
+          {
+            "answer": "hmm"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
